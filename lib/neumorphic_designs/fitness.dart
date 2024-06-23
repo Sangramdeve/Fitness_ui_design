@@ -77,7 +77,7 @@ class _NeumorphicState extends State<Neumorphic> {
                           width: 100,
                           height: 48,
                           decoration: BoxDecoration(
-                            borderRadius:BorderRadius.circular(17) ,
+                            borderRadius:BorderRadius.circular(20) ,
                             boxShadow: const [
                               BoxShadow(
                                 color: neuDarkColor,
@@ -174,7 +174,7 @@ class _NeumorphicState extends State<Neumorphic> {
                     child: Center(
                       child: CustomPaint(
                         size: Size(10,50),
-                        painter: CirclePainter2(percent: 70, outerRadius: 40, innerRadius: 20),
+                        painter: CirclePainter2(percent: 70, outerRadius: 40, innerRadius: 20, color: [circle,circle2]),
                         child:  Center(
                           child: Container(
                             height: 90,
@@ -197,6 +197,7 @@ class _NeumorphicState extends State<Neumorphic> {
                                   boxShadow: [
                                     BoxShadow(
                                       color: neuDarkColor,
+
                                     ),
                                     BoxShadow(
                                       color: neuLightColor,
@@ -216,14 +217,15 @@ class _NeumorphicState extends State<Neumorphic> {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.only(top: 50,left: 5,right: 5,),
+                padding: EdgeInsets.only(top: 50,right: 15,left: 15),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    NeoGradiantSlider(h: 160, w: 40, percent: 45, color: neuLightColor, field: 'Relax',),
-                    NeoGradiantSlider(h: 160, w: 40, percent: 0, color: neuLightColor, field: 'Cardio',),
-                    NeoGradiantSlider(h: 160, w: 40, percent: 100, color: neuLightColor, field: 'Strength',),
-                    NeoGradiantSlider(h: 160, w: 40, percent: 67, color: neuLightColor, field: 'Stretch',),
+
+                    NeoGradiantSlider(h: 160, w: 40, percent: 47, color: [strength4,strength3,strength2,strength], field: 'Strength',),
+                    NeoGradiantSlider(h: 160, w: 40, percent: 0, color: [stretch4,stretch3,stretch2,stretch], field: 'Stretch',),
+                    NeoGradiantSlider(h: 160, w: 40, percent: 90,color: [relax,relax2,relax3,relax4], field: 'Relax',),
+                    NeoGradiantSlider(h: 160, w: 40, percent: 60, color: [cardio4,cardio3,cardio2,cardio], field: 'Cardio',),
                   ],
                 ),
               ),

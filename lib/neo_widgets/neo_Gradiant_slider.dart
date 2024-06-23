@@ -10,7 +10,7 @@ class NeoGradiantSlider extends StatelessWidget {
   final double h;
   final double w;
   final int percent;
-  final Color color;
+  final List<Color> color;
   final String field;
 
    const NeoGradiantSlider({super.key,
@@ -67,11 +67,11 @@ class NeoGradiantSlider extends StatelessWidget {
               child: Stack(
                 children: [
                   Positioned(
-                    left: (w - 30) / 2,
-                    bottom: 5,
+                    left: (w - 31) / 2,
+                    bottom: 4,
                     child: CustomPaint(
                       size: Size(30, calculatedHeight),
-                      painter: LinePainter(lineWidth: 27, cornerRadius: 15),
+                      painter: LinePainter(lineWidth: 30, cornerRadius: 15, color: color),
                     ),
                   ),
                 ],
@@ -81,7 +81,7 @@ class NeoGradiantSlider extends StatelessWidget {
         Opacity(
           opacity: 0.4,
           child: Text(field, style: GoogleFonts.roboto(
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: FontWeight.w400,
             color: Colors.black,),),
         ),
@@ -89,7 +89,7 @@ class NeoGradiantSlider extends StatelessWidget {
         Opacity(
           opacity: 0.5,
           child: Text('$percent%', style: GoogleFonts.roboto(
-            fontSize: 14,
+            fontSize: 13,
             fontWeight: FontWeight.w700,
             color: Colors.black,),),
         ),
